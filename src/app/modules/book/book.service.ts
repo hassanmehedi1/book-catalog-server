@@ -67,7 +67,7 @@ const getAllBooks = async (
     });
   }
 
-  const { page, limit, skip, sortBy, sortOrder } =
+  const { page, sortBy, sortOrder } =
     paginationHelper.calculatePagination(paginationOptions);
 
   const sortConditions: { [key: string]: SortOrder } = {};
@@ -79,17 +79,13 @@ const getAllBooks = async (
   let whereConditions: any =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
-  const result = await Book.find(whereConditions)
-    .sort(sortConditions)
-    .skip(skip)
-    .limit(limit);
+  const result = await Book.find(whereConditions).sort(sortConditions);
 
   const total = await Book.countDocuments();
 
   return {
     meta: {
       page,
-      limit,
       total,
     },
     data: result,
