@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // main directories
 app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to the book trekker");
+  res.send("Welcome to the Book Verse");
 });
 
 // application routes

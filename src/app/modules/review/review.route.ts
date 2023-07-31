@@ -6,3 +6,5 @@ router.post("/review/:id", BookController.addReview);
 
 //* get all review
 router.get("/review/:id", BookController.getAllReview);
+
+export const ReviewRoutes = router;

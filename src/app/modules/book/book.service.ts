@@ -22,8 +22,6 @@ const createNewBook = async (
       throw new ApiError(httpStatus.BAD_REQUEST, "Book already exists");
     }
 
-    // const bookData = Object.assign({}, payload, { userEmail }) // Add userEmail to the payload
-
     const createdBook = await Book.create(payload);
     if (!createdBook) {
       throw new ApiError(httpStatus.BAD_REQUEST, "Failed to create book");
@@ -35,7 +33,7 @@ const createNewBook = async (
   }
 };
 
-// get allCows
+// get allBooks
 
 const getAllBooks = async (
   filters: IBookFilters,
