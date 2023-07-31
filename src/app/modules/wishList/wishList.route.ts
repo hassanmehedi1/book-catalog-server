@@ -9,4 +9,4 @@ router.post("/", wishListController.createWishList);
 // get all wishList
 router.get("/", wishListController.getAllWishList);
 
-export const wishListRoutes = router;
+export const WishListRoutes = router;

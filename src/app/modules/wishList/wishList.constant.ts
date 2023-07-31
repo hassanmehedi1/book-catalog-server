@@ -1,3 +1,3 @@
-// import { IStatus } from './wishList.interface';
+import { IStatus } from "./wishList.interface";
 
-// export const status: IStatus[] = ['reading', 'plan to read', 'finished'];
+export const status: IStatus[] = ["reading", "plan to read", "finished"];
